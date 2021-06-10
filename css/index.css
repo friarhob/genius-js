@@ -1,0 +1,33 @@
+body {
+    font-family: 'Asap Condensed', sans-serif;
+    text-align: center;
+}
+
+.botoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botoes > div {
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+}
+
+.botoes > #azul {
+    background-color: blue;
+}
+
+.botoes > #vermelho {
+    background-color: red;
+}
+
+.botoes > #amarelo {
+    background-color: yellow;
+}
+
+.botoes > #verde {
+    background-color: green;
+}
