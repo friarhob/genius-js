@@ -4,23 +4,24 @@
         <link rel="stylesheet" href="css/index.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+        <script src="js/index.js" defer></script>
     </head>
     <body>
         <h1>Genius em JavaScript</h1>
-        <div class="botoes">
-            <div id="azul"></div>
-            <div id="vermelho"></div>
-        </div>
-        <div class="botoes">
-            <div id="verde"></div>
-            <div id="amarelo"></div>    
+        <div class="tabuleiro">
+            <div class="botoes">
+                <div id="azul"></div>
+                <div id="vermelho"></div>
+            </div>
+            <div class="botoes">
+                <div id="verde"></div>
+                <div id="amarelo"></div>    
+            </div>    
         </div>
         <div class="status">
-            <div class="pontos">
-                <p id="pontuacao">Pontuação: 0</p>
-            </div>
-            <p>Jogo Encerrado</p>
-            <button type="button">Novo Jogo</button> 
+            <p id="pontuacao"></p>
+            <p id="status">Jogo Encerrado</p>
+            <button type="button" id="botao" onclick="novoJogo()">Novo Jogo</button> 
         </div>
     </body>
 </html>

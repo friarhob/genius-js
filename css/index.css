@@ -3,6 +3,13 @@ body {
     text-align: center;
 }
 
+.tabuleiro {
+    background-color: darkslategray;
+    margin-left: 100px;
+    margin-right: 100px;
+    border-radius: 30%;
+}
+
 .botoes {
     display: flex;
     align-items: center;
