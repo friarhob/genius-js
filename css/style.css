@@ -3,11 +3,17 @@ body {
     text-align: center;
 }
 
+.jogo {
+    display: flex;
+    justify-content: center;
+}
+
 .tabuleiro {
     background-color: darkslategray;
     margin-left: 100px;
     margin-right: 100px;
-    border-radius: 30%;
+    border-radius: 10%;
+    width: 500px;
 }
 
 .botoes {

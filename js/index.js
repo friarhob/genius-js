@@ -9,20 +9,57 @@ var jogo = {
     sequencia: [],
     passo: 0,
     pontos: 0,
-    ativo: false,
-    jogar: false,
+    jogar: false
 }
 
-function mostraSequencia() {
-    for (let cor of jogo.sequencia) {
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+async function mostraSequencia() {
+    console.log(jogo.sequencia);
+    for (var cor of jogo.sequencia) {
         idDoQuadrado = ["azul", "vermelho", "verde", "amarelo"][cor];
         corDestaque = ['lightblue', 'pink', 'lightgreen', 'lightyellow'][cor];
         corOriginal = ["blue", "red", "green", "yellow"][cor]
 
         document.getElementById(idDoQuadrado).style.backgroundColor = corDestaque;
-        setTimeout(function () {
+        await sleep(800).then(() => {        
             document.getElementById(idDoQuadrado).style.backgroundColor = corOriginal;
-        }, 700);
+        });
+        await sleep(200).then(() => { return; });
+    }
+    jogo.jogar = true;
+}
+
+function apertarBotao(corString) {
+    var cor = {
+        "azul": cores.AZUL,
+        "amarelo": cores.AMARELO,
+        "verde": cores.VERDE,
+        "vermelho": cores.VERMELHO
+    } [corString];
+
+    if (jogo.jogar) // ignorar cliques se não for hora de clicar
+    {
+        if (jogo.sequencia[jogo.passo] == cor) //clicou certo
+        {
+            jogo.passo++;
+            if (jogo.passo == jogo.sequencia.length) // acertou a sequencia toda
+            {
+                jogo.sequencia.push(novaCor());
+                jogo.passo = 0;
+                jogo.pontos++;
+                jogo.jogar = false;
+                document.getElementById("pontuacao").innerHTML = "Pontuação: " + (jogo.sequencia.length - 1);
+                mostraSequencia();
+            }
+        } else // clicou errado
+        {
+            document.getElementById("botao").disabled = false;
+            document.getElementById("status").innerHTML = "Você errou. Fim de jogo.";
+            jogo.jogar = false;
+        }
     }
 }
 
