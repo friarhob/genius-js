@@ -12,16 +12,15 @@ var jogo = {
     jogar: false
 }
 
-const sleep = (milliseconds) => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds))
+const sleep = (milissegundos) => {
+    return new Promise(resolve => setTimeout(resolve, milissegundos));
 }
 
 async function mostraSequencia() {
-    console.log(jogo.sequencia);
     for (var cor of jogo.sequencia) {
         idDoQuadrado = ["azul", "vermelho", "verde", "amarelo"][cor];
         corDestaque = ['lightblue', 'pink', 'lightgreen', 'lightyellow'][cor];
-        corOriginal = ["blue", "red", "green", "yellow"][cor]
+        corOriginal = ["blue", "red", "green", "yellow"][cor];
 
         document.getElementById(idDoQuadrado).style.backgroundColor = corDestaque;
         await sleep(800).then(() => {        
@@ -64,11 +63,10 @@ function apertarBotao(corString) {
 }
 
 function novaCor() {
-    return Math.floor(Math.random() * 4); //inteiro aleatório entre 0 e 3
+    return Math.floor(Math.random()*4); //inteiro aleatório entre 0 e 3
 }
 
 function novoJogo() {
-    jogo.ativo = true;
     document.getElementById("botao").disabled = true;
     jogo.sequencia = [novaCor()]
     jogo.passo = 0;
@@ -78,13 +76,3 @@ function novoJogo() {
     document.getElementById("status").innerHTML = "Jogo ativo. Clique na sequência correta.";
     mostraSequencia();
 }
-
-
-// function verificaNovaFase() {
-//     if(jogo.ativo && jogo.passo == jogo.sequencia.length)
-//     {
-//         jogo.pontos = jogo.passo;
-//         jogo.sequencia.push(Math.floor(Math.random()*4)); //inteiro aleatório entre 0 e 3
-//         jogo.passo = 0;
-//     }
-// }
