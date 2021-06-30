@@ -1,19 +1,37 @@
 body {
-    font-family: 'Asap Condensed', sans-serif;
+    font-family: "Asap Condensed", sans-serif;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    background-image: url("https://qub.portadaaksat.site/img/607381.jpg");
+    background-size: cover;
+}
+
+.cartao {
+    background-color:lightcyan;
+    width: 700px;
+    border-radius: 20px;
+    margin-top: 100px;
+    padding: 20px;
 }
 
 .jogo {
     display: flex;
     justify-content: center;
+    border-radius: 10px;
+    width: 100%;
 }
 
 .tabuleiro {
     background-color: darkslategray;
+    border-radius: 20px;
+    width: 500px;
+    padding: 20px;
+}
+
+.status {
     margin-left: 100px;
     margin-right: 100px;
-    border-radius: 10%;
-    width: 500px;
 }
 
 .botoes {
@@ -22,25 +40,25 @@ body {
     justify-content: center;
 }
 
-.botoes > div {
+.botoes>div {
     margin: 10px;
     width: 200px;
     height: 200px;
-    border-radius: 10%;
+    border-radius: 20px;
 }
 
-.botoes > #azul {
+.botoes>#azul {
     background-color: blue;
 }
 
-.botoes > #vermelho {
+.botoes>#vermelho {
     background-color: red;
 }
 
-.botoes > #amarelo {
+.botoes>#amarelo {
     background-color: yellow;
 }
 
-.botoes > #verde {
+.botoes>#verde {
     background-color: green;
 }

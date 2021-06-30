@@ -22,11 +22,11 @@ async function mostraSequencia() {
         corDestaque = ['lightblue', 'pink', 'lightgreen', 'lightyellow'][cor];
         corOriginal = ["blue", "red", "green", "yellow"][cor];
 
+        await sleep(200).then(() => { return; });
         document.getElementById(idDoQuadrado).style.backgroundColor = corDestaque;
         await sleep(800).then(() => {        
             document.getElementById(idDoQuadrado).style.backgroundColor = corOriginal;
         });
-        await sleep(200).then(() => { return; });
     }
     jogo.jogar = true;
 }
