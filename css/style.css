@@ -56,6 +56,10 @@ button {
     border-radius: 20px;
 }
 
+button:disabled {
+    visibility: hidden;
+}
+
 .botoes>#azul {
     background-color: blue;
 }
