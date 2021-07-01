@@ -42,6 +42,15 @@ async function mostraSequencia() {
 function soltarBotao(corString) {
     var cor = numerosCores[corString];
     document.getElementById(corString).style.backgroundColor = coresOriginais[cor];
+    if (jogo.passo == jogo.sequencia.length) // acertou a sequencia toda
+    {
+        jogo.sequencia.push(novaCor());
+        jogo.passo = 0;
+        jogo.pontos++;
+        jogo.jogar = false;
+        document.getElementById("pontuacao").innerHTML = "Pontuação: " + (jogo.sequencia.length - 1);
+        mostraSequencia();
+    }
 }
 
 function apertarBotao(corString) {
@@ -52,15 +61,6 @@ function apertarBotao(corString) {
         if (jogo.sequencia[jogo.passo] == cor) //clicou certo
         {
             jogo.passo++;
-            if (jogo.passo == jogo.sequencia.length) // acertou a sequencia toda
-            {
-                jogo.sequencia.push(novaCor());
-                jogo.passo = 0;
-                jogo.pontos++;
-                jogo.jogar = false;
-                document.getElementById("pontuacao").innerHTML = "Pontuação: " + (jogo.sequencia.length - 1);
-                mostraSequencia();
-            }
         } else // clicou errado
         {
             document.getElementById("botao").disabled = false;
