@@ -1,10 +1,11 @@
 body {
     font-family: "Asap Condensed", sans-serif;
     color: darkblue;
+    background-color: skyblue;
     text-align: center;
     display: flex;
     justify-content: center;
-    background-image: url("https://qub.portadaaksat.site/img/607381.jpg");
+    /* background-image: url("https://qub.portadaaksat.site/img/607381.jpg"); */
     background-size: cover;
 }
 
@@ -12,14 +13,13 @@ body {
     background-color: lightcyan;
     width: 700px;
     border-radius: 20px;
-    margin-top: 100px;
+    margin-top: 20px;
     padding: 20px;
 }
 
 .jogo {
     display: flex;
     justify-content: center;
-    border-radius: 10px;
     width: 100%;
 }
 
@@ -27,12 +27,13 @@ body {
     background-color: darkslategray;
     border-radius: 20px;
     width: 500px;
-    padding: 20px;
+    padding: 10px;
 }
 
 .status {
     margin-left: 100px;
     margin-right: 100px;
+    font-size: large;
 }
 
 .botoes {
@@ -51,9 +52,10 @@ body {
 button {
     background-color: darkblue;
     color: lightcyan;
+    font-size: larger;
     border: none;
-    padding: 10px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 50%;
 }
 
 button:disabled {
