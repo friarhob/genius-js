@@ -16,16 +16,16 @@
         <div class="jogo">
             <div class="tabuleiro">
                 <div class="botoes">
-                    <div id="azul" onmousedown="apertarBotao('azul')"></div>
-                    <div id="vermelho" onmousedown="apertarBotao('vermelho')"></div>
+                    <div id="azul" onmousedown="apertarBotao('azul')" onmouseup="soltarBotao('azul')" onmouseout="soltarBotao('azul')"></div>
+                    <div id="vermelho" onmousedown="apertarBotao('vermelho')" onmouseup="soltarBotao('vermelho')" onmouseout="soltarBotao('vermelho')"></div>
                 </div>
                 <div class="botoes">
-                    <div id="verde" onmousedown="apertarBotao('verde')"></div>
-                    <div id="amarelo" onmousedown="apertarBotao('amarelo')"></div>
+                    <div id="verde" onmousedown="apertarBotao('verde')" onmouseup="soltarBotao('verde')" onmouseout="soltarBotao('verde')"></div>
+                    <div id="amarelo" onmousedown="apertarBotao('amarelo')" onmouseup="soltarBotao('amarelo')" onmouseout="soltarBotao('amarelo')"></div>
                 </div>
             </div>
         </div>
-       <div class="status">
+        <div class="status">
             <p id="pontuacao"></p>
             <p id="status">Jogo Encerrado</p>
             <button type="button" id="botao" onclick="novoJogo()">Novo Jogo</button>

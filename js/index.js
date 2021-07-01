@@ -29,7 +29,7 @@ const sleep = (milissegundos) => {
 
 async function mostraSequencia() {
     for (var cor of jogo.sequencia) {
-        await sleep(200).then(() => {
+        await sleep(500).then(() => {
             document.getElementById(idsDosBotoes[cor]).style.backgroundColor = coresDestaques[cor];
         });
         await sleep(800).then(() => {
@@ -39,12 +39,16 @@ async function mostraSequencia() {
     jogo.jogar = true;
 }
 
-function apertarBotao(corString) {
+function soltarBotao(corString) {
     var cor = numerosCores[corString];
-    //document.getElementById(corString).style.backgroundColor = coresDestaques[cor];
+    document.getElementById(corString).style.backgroundColor = coresOriginais[cor];
+}
 
+function apertarBotao(corString) {
     if (jogo.jogar) // ignorar cliques se não for hora de clicar
     {
+        var cor = numerosCores[corString];
+        document.getElementById(corString).style.backgroundColor = coresDestaques[cor];
         if (jogo.sequencia[jogo.passo] == cor) //clicou certo
         {
             jogo.passo++;
