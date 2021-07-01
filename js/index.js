@@ -29,9 +29,10 @@ const sleep = (milissegundos) => {
 
 async function mostraSequencia() {
     for (var cor of jogo.sequencia) {
-        await sleep(200).then(() => { return; });
-        document.getElementById(idsDosBotoes[cor]).style.backgroundColor = coresDestaques[cor];
-        await sleep(800).then(() => {        
+        await sleep(200).then(() => {
+            document.getElementById(idsDosBotoes[cor]).style.backgroundColor = coresDestaques[cor];
+        });
+        await sleep(800).then(() => {
             document.getElementById(idsDosBotoes[cor]).style.backgroundColor = coresOriginais[cor];
         });
     }
@@ -40,7 +41,7 @@ async function mostraSequencia() {
 
 function apertarBotao(corString) {
     var cor = numerosCores[corString];
-    document.getElementById(corString).style.backgroundColor = coresDestaques[cor];
+    //document.getElementById(corString).style.backgroundColor = coresDestaques[cor];
 
     if (jogo.jogar) // ignorar cliques se não for hora de clicar
     {
@@ -66,7 +67,7 @@ function apertarBotao(corString) {
 }
 
 function novaCor() {
-    return Math.floor(Math.random()*4); //inteiro aleatório entre 0 e 3
+    return Math.floor(Math.random() * 4); //inteiro aleatório entre 0 e 3
 }
 
 function novoJogo() {
