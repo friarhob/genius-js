@@ -12,32 +12,35 @@ var jogo = {
     jogar: false
 }
 
+var idsDosBotoes = ["azul", "vermelho", "verde", "amarelo"];
+var coresDestaques = ['lightblue', 'pink', 'lightgreen', 'lightyellow'];
+var coresOriginais = ["blue", "red", "green", "yellow"];
+
+var numerosCores = {
+    "azul": cores.AZUL,
+    "amarelo": cores.AMARELO,
+    "verde": cores.VERDE,
+    "vermelho": cores.VERMELHO
+}
+
 const sleep = (milissegundos) => {
     return new Promise(resolve => setTimeout(resolve, milissegundos));
 }
 
 async function mostraSequencia() {
     for (var cor of jogo.sequencia) {
-        idDoQuadrado = ["azul", "vermelho", "verde", "amarelo"][cor];
-        corDestaque = ['lightblue', 'pink', 'lightgreen', 'lightyellow'][cor];
-        corOriginal = ["blue", "red", "green", "yellow"][cor];
-
         await sleep(200).then(() => { return; });
-        document.getElementById(idDoQuadrado).style.backgroundColor = corDestaque;
+        document.getElementById(idsDosBotoes[cor]).style.backgroundColor = coresDestaques[cor];
         await sleep(800).then(() => {        
-            document.getElementById(idDoQuadrado).style.backgroundColor = corOriginal;
+            document.getElementById(idsDosBotoes[cor]).style.backgroundColor = coresOriginais[cor];
         });
     }
     jogo.jogar = true;
 }
 
 function apertarBotao(corString) {
-    var cor = {
-        "azul": cores.AZUL,
-        "amarelo": cores.AMARELO,
-        "verde": cores.VERDE,
-        "vermelho": cores.VERMELHO
-    } [corString];
+    var cor = numerosCores[corString];
+    document.getElementById(corString).style.backgroundColor = coresDestaques[cor];
 
     if (jogo.jogar) // ignorar cliques se não for hora de clicar
     {
